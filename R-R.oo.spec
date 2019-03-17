@@ -4,7 +4,7 @@
 #
 Name     : R-R.oo
 Version  : 1.22.0
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/R.oo_1.22.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/R.oo_1.22.0.tar.gz
 Summary  : R Object-Oriented Programming with or without References
@@ -12,7 +12,7 @@ Group    : Development/Tools
 License  : LGPL-2.1
 Requires: R-R.methodsS3
 BuildRequires : R-R.methodsS3
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 No detailed description available
@@ -25,11 +25,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1525647634
+export SOURCE_DATE_EPOCH=1552795314
 
 %install
+export SOURCE_DATE_EPOCH=1552795314
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1525647634
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -64,8 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library R.oo|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  R.oo || :
 
 
 %files
@@ -94,3 +93,30 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/R.oo/html/R.css
 /usr/lib64/R/library/R.oo/misc/ASCII.R
 /usr/lib64/R/library/R.oo/misc/Exception.R
+/usr/lib64/R/library/R.oo/tests/ASCII.R
+/usr/lib64/R/library/R.oo/tests/BasicObject.R
+/usr/lib64/R/library/R.oo/tests/Class.R
+/usr/lib64/R/library/R.oo/tests/Exception.R
+/usr/lib64/R/library/R.oo/tests/Interface.R
+/usr/lib64/R/library/R.oo/tests/InternalErrorException.reportBug.R
+/usr/lib64/R/library/R.oo/tests/Object.R
+/usr/lib64/R/library/R.oo/tests/Object.finalize,noattach.R
+/usr/lib64/R/library/R.oo/tests/Object.finalize,onoff.R
+/usr/lib64/R/library/R.oo/tests/Object.finalize.R
+/usr/lib64/R/library/R.oo/tests/Package.R
+/usr/lib64/R/library/R.oo/tests/Package.unload.R
+/usr/lib64/R/library/R.oo/tests/StaticMethodsAndNamespaces.R
+/usr/lib64/R/library/R.oo/tests/abort.R
+/usr/lib64/R/library/R.oo/tests/attachLocally.Object.R
+/usr/lib64/R/library/R.oo/tests/equals.R
+/usr/lib64/R/library/R.oo/tests/extend.default.R
+/usr/lib64/R/library/R.oo/tests/getConstructorS3.R
+/usr/lib64/R/library/R.oo/tests/hashCode.R
+/usr/lib64/R/library/R.oo/tests/isBeingCreated.Class.R
+/usr/lib64/R/library/R.oo/tests/ll.R
+/usr/lib64/R/library/R.oo/tests/local.R
+/usr/lib64/R/library/R.oo/tests/objectSize.R
+/usr/lib64/R/library/R.oo/tests/throw.R
+/usr/lib64/R/library/R.oo/tests/trim.R
+/usr/lib64/R/library/R.oo/tests/typeOfClass.R
+/usr/lib64/R/library/R.oo/tests/zzz.Object.finalize,reentrant.R
