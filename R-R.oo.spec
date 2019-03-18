@@ -4,13 +4,12 @@
 #
 Name     : R-R.oo
 Version  : 1.22.0
-Release  : 16
+Release  : 17
 URL      : https://cran.r-project.org/src/contrib/R.oo_1.22.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/R.oo_1.22.0.tar.gz
 Summary  : R Object-Oriented Programming with or without References
 Group    : Development/Tools
 License  : LGPL-2.1
-Requires: R-R.methodsS3
 BuildRequires : R-R.methodsS3
 BuildRequires : buildreq-R
 
@@ -25,10 +24,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552795314
+export SOURCE_DATE_EPOCH=1552951687
 
 %install
-export SOURCE_DATE_EPOCH=1552795314
+export SOURCE_DATE_EPOCH=1552951687
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
