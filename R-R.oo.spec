@@ -4,12 +4,13 @@
 #
 Name     : R-R.oo
 Version  : 1.22.0
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/R.oo_1.22.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/R.oo_1.22.0.tar.gz
 Summary  : R Object-Oriented Programming with or without References
 Group    : Development/Tools
 License  : LGPL-2.1
+Requires: R-R.methodsS3
 BuildRequires : R-R.methodsS3
 BuildRequires : buildreq-R
 
@@ -23,13 +24,13 @@ No detailed description available
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552957164
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1569373202
 
 %install
-export SOURCE_DATE_EPOCH=1552957164
+export SOURCE_DATE_EPOCH=1569373202
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -58,12 +59,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  R.oo || :
+R CMD check --no-manual --no-examples --no-codoc R.oo || :
 
 
 %files
