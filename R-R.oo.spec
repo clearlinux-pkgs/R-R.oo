@@ -4,7 +4,7 @@
 #
 Name     : R-R.oo
 Version  : 1.23.0
-Release  : 28
+Release  : 29
 URL      : https://cran.r-project.org/src/contrib/R.oo_1.23.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/R.oo_1.23.0.tar.gz
 Summary  : R Object-Oriented Programming with or without References
@@ -13,28 +13,28 @@ License  : LGPL-2.1
 Requires: R-R.methodsS3
 BuildRequires : R-R.methodsS3
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 No detailed description available
 
 %prep
 %setup -q -c -n R.oo
+cd %{_builddir}/R.oo
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1572797963
+export SOURCE_DATE_EPOCH=1589574804
 
 %install
-export SOURCE_DATE_EPOCH=1572797963
+export SOURCE_DATE_EPOCH=1589574804
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
