@@ -7,7 +7,7 @@
 #
 Name     : R-R.oo
 Version  : 1.26.0
-Release  : 55
+Release  : 56
 URL      : https://cran.r-project.org/src/contrib/R.oo_1.26.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/R.oo_1.26.0.tar.gz
 Summary  : R Object-Oriented Programming with or without References
